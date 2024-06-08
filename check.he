@@ -1,0 +1,7 @@
+#!/bin/bash
+x="$(./$1 $2 | wc -l)"
+echo "Number of lines:$x"
+for((i=1;i<=$x;i++))
+do
+./$1 $2 | tr " " "a"  | head -$i | tail -1 | wc -c
+done
